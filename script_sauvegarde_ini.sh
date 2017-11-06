@@ -21,7 +21,7 @@ REP_BACKUP="/volume1/dropbox/Prive/BACKUP_WEB/CONFIG"
 # DEBUT DU PROGRAMME
 #--------------------------------------------
 
-insertionDebutBDD "${NOM_TACHE}"
+#insertionDebutBDD "${NOM_TACHE}"
 
 DATE=`donnerDate "inverse"`
 
@@ -48,29 +48,16 @@ echo "Sauvegarde headphones" >> ${FICHIER}
 mkdir headphones >> ${FICHIER}
 cp -p /usr/local/headphones/var/config.ini  ${REPDATE}/headphones >> ${FICHIER}
 
-#Sauvegarde haproxy
-#echo "Sauvegarde haproxy" >> ${FICHIER}
-#mkdir haproxy >> ${FICHIER}
-#cp -p /usr/local/haproxy/var/haproxy.cfg.modele  ${REPDATE}/haproxy >> ${FICHIER}
-#cp -p /usr/local/haproxy/var/haproxy.cfg  ${REPDATE}/haproxy >> ${FICHIER}
-
 #Sauvegarde sickbeard-custom (sickrage)
 echo "Sauvegarde sickbeard-custom" >> ${FICHIER}
 mkdir sickbeard-custom >> ${FICHIER}
 cp -p /usr/local/sickbeard-custom/var/config.ini  ${REPDATE}/sickbeard-custom >> ${FICHIER}
-
-
-#Sauvergarde Couchpotato
-#echo "Sauvegarde couchpotato" >> ${FICHIER}
-#mkdir couchpotato >> ${FICHIER}
-#cp -p /usr/local/couchpotatoserver/var/settings.conf  ${REPDATE}/couchpotato >> ${FICHIER}
 
 echo "Sauvegarde fichiers HomeBridge" >> ${FICHIER}
 mkdir -p homebridge/persist >> ${FICHIER}
 cp -p /volume1/docker/homebridge/*.*  ${REPDATE}/homebridge >> ${FICHIER}
 cp -p /volume1/docker/homebridge/persist/*.*  ${REPDATE}/homebridge/persist >> ${FICHIER}
  
-
 echo "Sauvegarde fichiers HomeBridgeHue" >> ${FICHIER}
 mkdir -p homebridgehue/persist >> ${FICHIER}
 cp -p /volume1/docker/homebridgehue/*  ${REPDATE}/homebridgehue >> ${FICHIER}
@@ -86,8 +73,8 @@ effacerFichier $FICHIER
 
 
 #MAJ BDD
-insertionInformationBDD "${NOM_TACHE}" "${DESC}"
-insertionFinBDD "${NOM_TACHE}" "OK"
+#insertionInformationBDD "${NOM_TACHE}" "${DESC}"
+#insertionFinBDD "${NOM_TACHE}" "OK"
 
 #Notification
 envoyerNotification "$PUSHTOKEN_SCRIPT" "${NOM_TACHE}" "Fin de script"
