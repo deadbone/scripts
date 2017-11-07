@@ -13,7 +13,7 @@
 
 source ${REP_SCRIPT}/TOOLS.sh
 
-NOM_TACHE="script_sauvegarde_ini.sh"
+NOM_TACHE=`basename "$0"`
 FICHIER="/volume1/download/SCRIPTS/TRACE_${NOM_TACHE}.log"
 REP_BACKUP="/volume1/dropbox/Prive/BACKUP_WEB/CONFIG"
 

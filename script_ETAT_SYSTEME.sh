@@ -6,7 +6,7 @@
 #--------------------------------------------
 # VARIABLES
 #--------------------------------------------
-NOM_TACHE="script_ETAT_SYSTEME.sh"
+NOM_TACHE=`basename "$0"`
 
 source /volume1/download/SHELL/ENV/setEnv.sh
 source $REP_SCRIPT/TOOLS.sh
