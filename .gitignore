@@ -1,2 +1,4 @@
 *.bak
+*.sh_
 setEnv.sh
+
