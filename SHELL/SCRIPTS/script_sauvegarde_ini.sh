@@ -25,33 +25,33 @@ rm -fr ${DATE}
 mkdir ${DATE}
 cd ${DATE}
 
-echo "repertoire ${REP_BACKUP}" > ${FICHIER}
+echo "repertoire ${REP_BACKUP}"
 
 #Sauvegarde sabnzbd.ini
-echo "Sauvegarde sabnzbd" >> ${FICHIER}
-mkdir sabnzbd >> ${FICHIER}
-cp -p /usr/local/sabnzbd/var/config.ini  ${REPDATE}/sabnzbd >> ${FICHIER}
-cp -p -r /usr/local/sabnzbd/var/scripts/* ${REPDATE}/sabnzbd >> ${FICHIER}
+echo "Sauvegarde sabnzbd"
+mkdir sabnzbd
+cp -p /usr/local/sabnzbd/var/config.ini  ${REPDATE}/sabnzbd
+cp -p -r /usr/local/sabnzbd/var/scripts/* ${REPDATE}/sabnzbd
 
 #Sauvegarde headphones.ini
-echo "Sauvegarde headphones" >> ${FICHIER}
-mkdir headphones >> ${FICHIER}
-cp -p /usr/local/headphones/var/config.ini  ${REPDATE}/headphones >> ${FICHIER}
+echo "Sauvegarde headphones"
+mkdir headphones
+cp -p /usr/local/headphones/var/config.ini  ${REPDATE}/headphones
 
 #Sauvegarde sickbeard-custom (sickrage)
-echo "Sauvegarde sickbeard-custom" >> ${FICHIER}
-mkdir sickbeard-custom >> ${FICHIER}
-cp -p /usr/local/sickbeard-custom/var/config.ini  ${REPDATE}/sickbeard-custom >> ${FICHIER}
+echo "Sauvegarde sickbeard-custom"
+mkdir sickbeard-custom
+cp -p /usr/local/sickbeard-custom/var/config.ini  ${REPDATE}/sickbeard-custom
 
-echo "Sauvegarde fichiers HomeBridge" >> ${FICHIER}
-mkdir -p homebridge/persist >> ${FICHIER}
-cp -p /volume1/docker/homebridge/*.*  ${REPDATE}/homebridge >> ${FICHIER}
-cp -p /volume1/docker/homebridge/persist/*.*  ${REPDATE}/homebridge/persist >> ${FICHIER}
+echo "Sauvegarde fichiers HomeBridge"
+mkdir -p homebridge/persist
+cp -p /volume1/docker/homebridge/*.*  ${REPDATE}/homebridge
+cp -p /volume1/docker/homebridge/persist/*.*  ${REPDATE}/homebridge/persist
  
-echo "Sauvegarde fichiers HomeBridgeHue" >> ${FICHIER}
-mkdir -p homebridgehue/persist >> ${FICHIER}
-cp -p /volume1/docker/homebridgehue/*  ${REPDATE}/homebridgehue >> ${FICHIER}
-cp -p /volume1/docker/homebridgehue/persist/*.*  ${REPDATE}/homebridgehue/persist >> ${FICHIER}
+echo "Sauvegarde fichiers HomeBridgeHue"
+mkdir -p homebridgehue/persist
+cp -p /volume1/docker/homebridgehue/*  ${REPDATE}/homebridgehue
+cp -p /volume1/docker/homebridgehue/persist/*.*  ${REPDATE}/homebridgehue/persist
 
 #Notification
 envoyerNotification "$PUSHTOKEN_SCRIPT" "${NOM_TACHE}" "Fin de script"
